@@ -5,8 +5,6 @@ import { ServicesCategoryService } from '@api/serviceCategory';
 import { ActivatedRoute } from '@angular/router';
 import { merge, Observable, Subject } from 'rxjs';
 import { ServiceCategoryModel } from '@api/serviceCategory/models/service-category';
-import { ToasterService } from '@platform/modules/toaster/services/toaster.service';
-import { ToasterEnum } from '@platform/modules/toaster/enums/toaster-type.enum';
 
 @Component({
   templateUrl: './index.html',
@@ -29,7 +27,6 @@ export class ServicesList extends BaseComponent implements OnInit {
   constructor(
     private service: ServicesCategoryService,
     private activatedRoute: ActivatedRoute,
-    private toasterService: ToasterService,
 
   ) {
     super();
@@ -41,7 +38,6 @@ export class ServicesList extends BaseComponent implements OnInit {
 
   public itemsChanged(data: ServiceCategoryModel[]): void {
     this.list = data;
-    console.log('########', data);
   }
 
   public getList = (page: number) => {
@@ -53,15 +49,11 @@ export class ServicesList extends BaseComponent implements OnInit {
   }
 
   addCategoryService() {
-    if(this.newCategoryServiceName) {
-      this.service.addServiceCategory(this.newCategoryServiceName)
-        .subscribe((data) => {
-          this.subject.next({});
-          this.showAddModal();
-        })
-    } else {
-      this.toasterService.showNotification('Please enter the name ...', ToasterEnum.Error);
-    }
+    this.service.addServiceCategory(this.newCategoryServiceName)
+      .subscribe((data) => {
+        this.subject.next({});
+        this.showAddModal();
+      })
   }
 
   showDeleteModal(candidate = '') {

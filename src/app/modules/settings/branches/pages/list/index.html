@@ -1,0 +1,115 @@
+
+  <div class="P-main-top G-flex G-justify-between G-align-center">
+    <div class="G-title">
+      <h3>Филиалы</h3>
+    </div>
+    <div>
+      <button class="G-prime-btn" (click)="showAddModal()">Добавить филиал</button>
+    </div>
+  </div>
+
+  <div class="P-branches-container">
+
+    <div class="P-branches-table">
+      <div class="G-table-block">
+        <div class="G-table-head">
+          <div class="G-table-tr G-flex G-justify-between">
+            <div class="G-table-th">Филиал</div>
+            <div class="G-table-th">Кол-во админов</div>
+            <div class="G-table-th">Кол-во сотрудников</div>
+          </div>
+        </div>
+        <div class="G-table-body">
+          <div *ngFor="let item of list; let i = index" class="G-table-tr">
+            <div class="G-table-td">{{item.name}}</div>
+            <div class="G-table-td">{{item.adminCount}}</div>
+            <div class="G-table-td">
+              <div class="P-branches-date-block G-flex G-justify-between G-align-center">
+                <div class="P-branches-date">
+                  <p>{{item.employeeCount}}</p>
+                </div>
+                <div class="G-tc-toolbar">
+                  <app-toolbar-btn>
+                    <p  class="G-toolbar-item" (click)="showEditModal(item)" >Edit</p>
+                    <p  class="G-toolbar-item" (click)="showDeleteModal(item)">Delete</p>
+                  </app-toolbar-btn>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <g-pagination (itemsChanged)="itemsChanged($event)" [getData]="getList" [setParamsByLoad]="paramsByLoad$"></g-pagination>
+
+  </div>
+
+
+
+<modal-wrap *ngIf="addModalFlag">
+  <div class="P-branches-add-modal">
+    <h3>Новый филиал</h3>
+    <div class="P-branches-modal-input">
+      <p>Название</p>
+      <label>
+        <input [(ngModel)]="newCategoryServiceName" type="text">
+      </label>
+    </div>
+    <div class="P-service-modal-buttons G-flex G-justify-end">
+
+      <div>
+        <button (click)="showAddModal()" class="G-btn">Отменить</button>
+      </div>
+
+      <div>
+        <button class="G-prime-btn" (click)="addCategoryService()">Создать</button>
+      </div>
+    </div>
+  </div>
+</modal-wrap>
+
+
+<modal-wrap *ngIf="editModalFlag">
+  <div class="P-branches-add-modal">
+    <h3>Редактировать филиал</h3>
+    <div class="P-branches-modal-input">
+      <p>Название</p>
+      <label>
+        <input [(ngModel)]="editBranchName" type="text">
+      </label>
+    </div>
+    <div class="P-branches-modal-buttons G-flex G-justify-end">
+
+      <div>
+        <button (click)="showEditModal()" class="G-btn">Отменить</button>
+      </div>
+
+      <div>
+        <button class="G-prime-btn" (click)="editBrancheService()">Сохранить</button>
+      </div>
+    </div>
+  </div>
+</modal-wrap>
+
+
+
+<modal-wrap *ngIf="deleteFlagModal">
+  <div class="P-branches-delete-modal">
+    <h3>Внимание</h3>
+    <div class="P-branches-delete-input">
+      <p>Вы уверены, что хотите удалить этот Филиал?</p>
+    </div>
+    <div class="P-branches-modal-buttons G-flex G-justify-end">
+
+      <div>
+        <button (click)="showDeleteModal()" class="G-btn">Отменить</button>
+      </div>
+
+      <div>
+        <button class="G-prime-btn" (click)="removeBranch()">Удалить</button>
+      </div>
+    </div>
+  </div>
+</modal-wrap>

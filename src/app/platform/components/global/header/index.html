@@ -1,107 +1,36 @@
-<!-- <header>
-  <div class="G-container">
-    <div class="P-header G-flex G-align-center G-justify-between">
-      <div class="header-logo">
-        <a style="background-image: url('assets/images/sign-in/logo.png')"></a>
-      </div>
-      <div class="header-menu">
-        <ul>
-          <li>
-            <a routerLink="main">Расписание</a>
-          </li>
-          <li  routerLinkActive="active-menu">
-            <a routerLink="services">Услуги</a>
-          </li>
-          <li routerLinkActive="active-menu" class="P-menu"  (click)="showMenu($event)">
-            <a >Персонал</a>
-            <div class="menu-dropdown-container">
-              <ul class="G-flex G-flex-column G-align-start">
-<<<<<<< HEAD
-               <li><a routerLink="personal/employees">Сотрудники</a></li>
-=======
-                <li><a routerLink="personal/employees">Сотрудники</a></li>
->>>>>>> 2c249163d2b2156a0b2a77ed1538415a86b591ba
-                <li><a routerLink="personal/positions">Должность</a></li>
-                <li><a routerLink="personal/rooms">Комнаты</a></li>
-               <li><a href="#">Расчет</a></li>
-               <li><a href="#">Расписание</a></li>
-              </ul>
-            </div>
-          </li>
-          <li routerLinkActive="active-menu" class="P-menu" (click)="showMenu($event)">
-            <a >Клиенты</a>
-            <div class="menu-dropdown-container">
-              <ul class="G-flex G-flex-column G-align-start">
-                <li><a routerLink="clients/clients">Клиенты</a></li>
-<<<<<<< HEAD
-               <li><a routerLink="clients/groups">Группы</a></li>
-=======
-                <li><a routerLink="clients/groups">Группы</a></li>
->>>>>>> 2c249163d2b2156a0b2a77ed1538415a86b591ba
-              </ul>
-            </div>
-          </li>
-          <li routerLinkActive="active-menu" class="P-menu" (click)="showMenu($event)">
-            <a href="javaScript:void(0)">Финансы</a>
-            <div class="menu-dropdown-container">
-             <ul class="G-flex G-flex-column G-align-start">
-               <li><a href="#">Приход / Расход</a></li>
-               <li><a href="#">Отчёт по сотрудникам</a></li>
-             </ul>
-            </div>
-          </li>
-          <li routerLinkActive="active-menu" class="P-menu" (click)="showMenu($event)">
-            <a >Настройки</a>
-            <div class="menu-dropdown-container">
-              <ul class="G-flex G-flex-column G-align-start">
-                <li><a routerLink="settings">Филиалы</a></li>
-               <li><a >Админы</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="header-select">
-        <select (change)="selectBranch()" [(ngModel)]="branch">
-          <option *ngFor="let item of branchList" [value]="item.id" [label]="item.name"></option>
-        </select>
-      </div>
-    </div>
-  </div>
-</header> -->
-<!-- test -->
 <header>
-  <div class="G-h-100p G-container G-flex-center-between">
+  <div class="G-h-100p G-flex-center-between">
     <div class="P-logo G-mr-100px">
-      <div class="G-mr-1" [bgImage]="'assets/images/sign-in/logo.png'"></div>
+      <div
+       class="G-mr-1 G-cursor"
+       [bgImage]="'assets/images/sign-in/logo.png'"
+       (click)="onNavigateHome()"></div>
     </div>
 
-    <div class="G-w-80p G-h-100p G-flex-center-between">
+    <div class="G-w-80p G-min-w-800px G-h-100p G-flex-center-between">
       <ng-container *ngFor="let item of routes">
-        <div class="P-nav-item-body">
+        <div *ngIf="!item.children.length" class="P-nav-item-body">
           <a
-           class="G-flex-align-center G-px-3" 
-           *ngIf="!item.children.length" 
+           class="G-flex-align-center G-px-1 P-nav-item" 
            [routerLink]="item.path"
            (click)="changeItemIsOpenedState(item)">
-            <p>{{ item.name }}</p>
+            <p [class.G-bold]="item.exact">{{ item.name }}</p>
           </a>
 
           <div
            class="P-nav-selected" 
            [class.P-selected]="item.exact && !isFirstInit"
            [class.P-init-selected]="item.exact && isFirstInit"
-           [class.P-unSelected]="!item.exact && !isFirstInit"></div>
+           [class.P-unSelected]="item.unSelected"></div>
         </div>
     
-        <div class="P-menu-container G-h-100p G-flex-align-center">
+        <div *ngIf="item.children.length" class="P-menu-container G-h-100p G-flex-align-center">
           <click-outside class="G-h-100p" (clickOutside)="onCloseMenu(item)">
           <div class="P-nav-item-body">
             <a
-             class="G-flex-center-between G-px-3" 
-             *ngIf="item.children.length"
+             class="G-flex-center-between G-px-1 P-nav-item" 
              (click)="changeItemIsOpenState(item)">
-              <p>{{ item.name }}</p>
+              <p [class.G-bold]="item.exact">{{ item.name }}</p>
   
               <i
                class="icon-arrow_down_1 G-fs-12 G-ml-1 G-mt-05" 
@@ -112,7 +41,8 @@
             <div
              class="P-nav-selected"
              [class.P-init-selected]="item.exact && isFirstInit"
-             [class.P-selected]="item.exact && !isFirstInit"></div>
+             [class.P-selected]="item.exact && !isFirstInit"
+             [class.P-unSelected]="item.unSelected"></div>
           </div>
     
             <div class="P-menu" *ngIf="item.opened">
@@ -129,16 +59,12 @@
         </div>
       </ng-container>
 
-      <div class="G-w-15p G-h-30px">
-        <!-- <select-dropdown
+      <div class="G-min-w-200px G-w-15p G-h-30px">
+        <select-dropdown
           [list]="branchList"
-          (evChange)="onSelectBranch($event)"></select-dropdown> -->
-
-        <div class="header-select">
-          <select (change)="onSelectBranch($event)">
-            <option *ngFor="let item of branchList" [value]="item.id" [label]="item.name"></option>
-          </select>
-        </div>
+          [smallHeight]="true"
+          [value]="branchId"
+          (evChange)="onSelectBranch($event)"></select-dropdown>
       </div>
     </div>
   </div>

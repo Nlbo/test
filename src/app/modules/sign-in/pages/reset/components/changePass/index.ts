@@ -16,6 +16,7 @@ export class ChangePass implements OnInit {
   password = new FormControl('');
   checkPassword = new FormControl('');
   flag: boolean = false;
+
   constructor(
     private router: Router,
     private toasterService: ToasterService,
@@ -24,9 +25,11 @@ export class ChangePass implements OnInit {
   }
 
   ngOnInit() {
+
   }
+
   auth() {
-    if (this.password.value === this.checkPassword.value && this.password.value) {
+    if (this.password.value === this.checkPassword.value) {
       this.flag = !this.flag;
       const data = {
         code: this.code,

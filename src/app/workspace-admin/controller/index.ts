@@ -44,23 +44,23 @@ export class Controller implements OnInit {
       children: [
         new SidebarNavigation({
           name: 'Сотрудники',
-          path: 'personal/employees',
+          path: 'employees',
         }),
         new SidebarNavigation({
           name: 'Должность',
-          path: 'personal/position',
+          path: 'position',
         }),
         new SidebarNavigation({
           name: 'Комнаты',
-          path: 'personal/rooms',
+          path: 'rooms',
         }),
         new SidebarNavigation({
           name: 'Расчет',
-          path: 'personal/rooms', // TODO change path
+          path: 'salaries',
         }),
         new SidebarNavigation({
           name: 'Расписание',
-          path: 'personal/rooms', // TODO change path
+          path: 'schedule',
         }),
       ],
     });
@@ -71,11 +71,11 @@ export class Controller implements OnInit {
       children: [
         new SidebarNavigation({
           name: 'Клиенты',
-          path: 'clients/clients',
+          path: 'clients',
         }),
         new SidebarNavigation({
           name: 'Группы',
-          path: 'clients/groups',
+          path: 'groups',
         }),
       ],
     });
@@ -86,11 +86,11 @@ export class Controller implements OnInit {
       children: [
         new SidebarNavigation({
           name: 'Приход / Расход',
-          path: 'clients/clients', // TODO change path
+          path: 'incoming-costs',
         }),
         new SidebarNavigation({
           name: 'Отчёт по сотрудникам',
-          path: 'clients/groups', // TODO change path
+          path: 'employee-report',
         }),
       ],
     });
@@ -101,11 +101,11 @@ export class Controller implements OnInit {
       children: [
         new SidebarNavigation({
           name: 'Филиалы',
-          path: 'settings', // TODO change path
+          path: 'branches',
         }),
         new SidebarNavigation({
           name: 'Админы',
-          path: 'clients/groups', // TODO change path
+          path: 'admins',
         }),
       ],
     });

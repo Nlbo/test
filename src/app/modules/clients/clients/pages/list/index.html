@@ -1,0 +1,88 @@
+  <div class="P-main-top G-flex G-justify-between G-align-center">
+    <div class="G-title">
+      <h3>Клиенты</h3>
+    </div>
+    <div class="G-flex G-align-stretch">
+      <div class="P-clients-modal-input-search G-mr-2">
+        <label>
+          <input class="G-input" [formControl]="searchText" placeholder="Искать по имени или номеру телефона..." type="text">
+        </label>
+      </div>
+      
+      <button class="G-prime-btn" (click)="showAddModal()">Добавить клиента</button>
+    </div>
+  </div>
+
+
+  <div class="P-clients-container">
+
+    <div class="P-clients-table">
+      <div class="G-table-block">
+        <div class="G-table-head">
+          <div class="G-table-tr G-flex G-justify-between">
+            <div class="G-table-th">Имя</div>
+            <div class="G-table-th">Номер телефона</div>
+            <div class="G-table-th">Всего записей</div>
+            <div class="G-table-th">На сумму</div>
+            <div class="G-table-th">Скидка</div>
+            <div class="G-table-th">Группа</div>
+          </div>
+        </div>
+        <div class="G-table-body">
+          <div *ngFor="let item of list; let i = index" class="G-table-tr">
+            <div class="G-table-td">{{item.firstName ? item.firstName : '-'}}</div>
+            <div class="G-table-td">{{item.phoneNumber ? item.phoneNumber : '-'}}</div>
+            <div class="G-table-td">{{item.recordCount ? item.recordCount : '-'}}</div>
+            <div class="G-table-td">{{item.recordCount ? item.recordCount : '-'}}</div>
+            <div class="G-table-td">{{item.discount ? item.discount : '-'}}</div>
+            <div class="G-table-td">
+              <div class="P-clients-date-block G-flex G-justify-between G-align-center">
+                <div class="P-clients-date">
+                  <p>{{item.groupName ? item.groupName : '-'}}</p>
+                </div>
+                <div class="G-tc-toolbar">
+                  <app-toolbar-btn>
+                    <p class="G-toolbar-item" (click)="showEditModal(item)">Edit</p>
+                    <p class="G-toolbar-item" (click)="showDeleteModal(item)">Delete</p>
+                  </app-toolbar-btn>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <g-pagination (itemsChanged)="itemsChanged($event)" [getData]="getList" [setParamsByLoad]="paramsByLoad$"></g-pagination>
+
+
+  </div>
+
+<add-model-client *ngIf="addModalFlag" (close)="showAddModal()" (send)="send()"></add-model-client>
+
+
+
+<change-model-client *ngIf="editModalFlag" (close)="showEditModal()" (send)="sendShowEditModal('get')" [id]="editCandidate.id"></change-model-client>
+
+
+
+
+
+<modal-wrap *ngIf="deleteFlagModal">
+  <div class="P-clients-delete-modal">
+    <h3>Внимание</h3>
+    <div class="P-clients-delete-input">
+      <p>Вы уверены, что хотите удалить этого клиента?</p>
+    </div>
+    <div class="P-clients-modal-buttons G-flex G-justify-end">
+
+      <div class="G-btn ">
+        <button (click)="showDeleteModal()" class="P-clients-modal-input-cancel-btn">Отменить</button>
+      </div>
+
+      <div class="G-btn">
+        <button (click)="removeclients()">Удалить</button>
+      </div>
+    </div>
+  </div>
+</modal-wrap>

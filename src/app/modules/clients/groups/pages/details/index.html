@@ -1,0 +1,81 @@
+
+  <div class="P-main-top G-flex G-justify-between G-align-center">
+    <div class="G-title">
+      <h3>Группы</h3>
+    </div>
+    <div class="G-flex G-align-center">
+      <div class="P-groups-modal-input-search">
+        <label>
+          <input [formControl]="searchText"  placeholder="Искать по названию" type="text">
+        </label>
+      </div>
+<!--        <div class="G-btn G-btn-create" >-->
+<!--          <button (click)="showAddModal()">Добавить группу</button>-->
+<!--        </div>-->
+      </div>
+    </div>
+
+
+
+  <div class="P-groups-container">
+
+    <div class="P-groups-table">
+      <div class="G-table-block">
+        <div class="G-table-head">
+          <div class="G-table-tr G-flex G-justify-between">
+            <div class="G-table-th">Имя</div>
+            <div class="G-table-th">+37412154545</div>
+            <div class="G-table-th">Всего записей</div>
+            <div class="G-table-th">На сумму</div>
+            <div class="G-table-th">Скидка</div>
+          </div>
+        </div>
+        <div class="G-table-body">
+          <div *ngFor="let item of list; let i = index" class="G-table-tr">
+            <div class="G-table-td">{{item.firstName}}</div>
+            <div class="G-table-td">{{item.phoneNumber}}</div>
+            <div class="G-table-td">{{item.recordCount ? item.recordCount: '-'}}</div>
+            <div class="G-table-td">{{item.discount}}</div>
+            <div class="G-table-td">
+              <div class="P-groups-date-block G-flex G-justify-between G-align-center">
+                <div class="P-groups-date">
+                  <p>{{item.discount}}</p>
+                </div>
+                <div class="G-tc-toolbar">
+                  <app-toolbar-btn>
+                    <p class="G-toolbar-item" (click)="showEditModal(item)">Edit</p>
+                    <p class="G-toolbar-item" (click)="showDeleteModal(item)">Delete</p>
+                  </app-toolbar-btn>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <g-pagination (itemsChanged)="itemsChanged($event)" [getData]="getList" [setParamsByLoad]="paramsByLoad$"></g-pagination>
+
+  </div>
+
+
+
+
+<change-customer-model-group *ngIf="editModalFlag" (close)="this.showEditModal()" (send)="this.showEditModal('get')" [id]="editCandidate.id"></change-customer-model-group>
+
+
+<modal-wrap *ngIf="deleteFlagModal">
+  <div class="P-groups-delete-modal">
+    <h3>Внимание</h3>
+    <div class="P-groups-delete-input">
+      <p>Вы уверены, что хотите удалить эту должнось?</p>
+    </div>
+    <div class="P-groups-modal-buttons G-flex G-justify-end">
+
+      <button (click)="showDeleteModal()" class="G-btn">Отменить</button>
+
+      <button class="G-prime-btn" (click)="removegroups()">Удалить</button>
+    </div>
+  </div>
+</modal-wrap>

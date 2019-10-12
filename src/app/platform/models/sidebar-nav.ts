@@ -8,6 +8,7 @@ export class SidebarNavigation {
   public languageControl: string;
   public opened: boolean = false;
   public exact: boolean = false;
+  public unSelected: boolean = false;
   private _children: SidebarNavigation[] = [];
 
   constructor(data: ISidebarNavigation) {

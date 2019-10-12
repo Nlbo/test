@@ -59,6 +59,20 @@
   border-radius: 50%;
 }
 
+.G-circle-image-middle {
+  width        : 50px;
+  min-width    : 50px;
+  height       : 50px;
+  border-radius: 50%;
+}
+
+.G-circle-image-big {
+  width        : 250px;
+  min-width    : 250px;
+  height       : 250px;
+  border-radius: 50%;
+}
+
 .G-red-i {
   color: red
 }
@@ -104,8 +118,6 @@ $fonts: (
 // #endregion
 
 
-// #region Flex
-
 .G-flex {
   display: flex;
 }
@@ -133,6 +145,10 @@ $fonts: (
 
 .G-align-center {
   align-items: center;
+}
+
+.G-align-stretch {
+  align-items: stretch;
 }
 
 .G-align-start {
@@ -167,7 +183,6 @@ $fonts: (
 // #endregion
 
 // #region Buttons
-
 
 
 
@@ -206,13 +221,13 @@ $fonts: (
 //   }
 // }
 
-// .G-input {
-//   width: 100%;
-//   height: $input-height;
-//   border: 1px solid $light-gray;
-//   text-indent: 10px;
-//   background-color: transparent;
-// }
+.G-input {
+  width: 100%;
+  height: $input-height;
+  border: 1px solid $light-gray;
+  text-indent: 10px;
+  background-color: transparent;
+}
 
 // .G-textarea {
 //   height: calc(#{$input-height} + 10px);
@@ -288,14 +303,6 @@ $fonts: (
 // #endregion
 
 // #region Sections
-
-// .G-block {
-//   width: 100%;
-//   padding: 20px;
-//   border-radius: $radius;
-//   box-shadow: $shadow;
-//   background-color: $white;
-// }
 
 .G-block-title {
   margin-bottom: 30px;
@@ -445,17 +452,10 @@ $fonts: (
 // #region Page
 
 .G-page {
-  width: calc(100% - #{$left-side-width});
+  width: 100%;
   min-height: 100vh;
   padding: calc(#{$header-height} + 40px) 60px 40px;
   position: relative;
-  transition: all $left-side-transition;
-  margin-left: $left-side-width;
-}
-
-.G-big {
-  width: calc(100% - #{$left-side-closed-width});
-  margin-left: $left-side-closed-width;
 }
 
 .G-container {
@@ -466,105 +466,3 @@ $fonts: (
 .G-cover {
   padding-top: $header-height;
 }
-
-// #endregion
-
-// #region Margins
-
-// .G-mb-1 {
-//   margin-bottom: 10px;
-// }
-
-// .G-mb-2 {
-//   margin-bottom: 20px;
-// }
-
-// .G-mb-3 {
-//   margin-bottom: 30px;
-// }
-
-// .G-mb-4 {
-//   margin-bottom: 40px;
-// }
-
-// .G-mb-5 {
-//   margin-bottom: 50px;
-// }
-
-// .G-mb-6 {
-//   margin-bottom: 60px;
-// }
-
-// .G-mt-1 {
-//   margin-top: 10px;
-// }
-
-// .G-mt-2 {
-//   margin-top: 20px;
-// }
-
-// .G-mt-3 {
-//   margin-top: 30px;
-// }
-
-// .G-mt-4 {
-//   margin-top: 40px;
-// }
-
-// .G-mt-5 {
-//   margin-top: 50px;
-// }
-
-// .G-mt-6 {
-//   margin-top: 60px;
-// }
-
-// .G-mr-1 {
-//   margin-right: 10px;
-// }
-
-// .G-mr-2 {
-//   margin-right: 20px;
-// }
-
-// .G-mr-3 {
-//   margin-right: 30px;
-// }
-
-// .G-mr-4 {
-//   margin-right: 40px;
-// }
-
-// .G-mr-5 {
-//   margin-right: 50px;
-// }
-
-// .G-mr-6 {
-//   margin-right: 60px;
-// }
-
-// .G-ml-1 {
-//   margin-left: 10px;
-// }
-
-// .G-ml-2 {
-//   margin-left: 20px;
-// }
-
-// .G-ml-3 {
-//   margin-left: 30px;
-// }
-
-// .G-ml-4 {
-//   margin-left: 40px;
-// }
-
-// .G-ml-5 {
-//   margin-left: 50px;
-// }
-
-// .G-ml-6 {
-//   margin-left: 60px;
-// }
-
-// #endregion

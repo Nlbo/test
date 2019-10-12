@@ -1,23 +1,22 @@
 @import 'variables';
 
-//
-//.G-btn {
-//    padding         : 10px 45px;
-//    display         : flex;
-//    align-items     : center;
-//    justify-content : center;
-//    position        : relative;
-//}
+.G-btn {
+   padding         : 10px 45px;
+   display         : flex;
+   align-items     : center;
+   justify-content : center;
+   position        : relative;
+}
 
 .G-prime-btn {
-    padding         : 15px 45px;
+    padding         : 10px 45px;
     display         : flex;
     align-items     : center;
     justify-content : center;
     position        : relative;
     color           : $white;
     box-shadow      : $btn-shadow;
-    background      : $black;
+    background      : $app-color;
 
     &:hover {
         color: $white;

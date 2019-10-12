@@ -5,13 +5,18 @@
   src         : url('../fonts/Lato-Regular.ttf');
 }
 
+@font-face {
+  font-family : 'Russian';
+  src         : url('../fonts/PTSans-Regular.ttf');
+}
+
 * {
   margin      : 0;
   padding     : 0;
   color       : $black;
   box-sizing  : border-box;
   outline     : 0;
-  font-family : 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family : 'Russian', 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html {
@@ -68,18 +73,6 @@ button {
   border           : 0;
   background-color : transparent;
 }
-
-h1, h2, h3, h4, h5, h6 {
-  letter-spacing : 1px;
-}
-
-h1 { font-size : 40px; }
-h2 { font-size : 32px; }
-h3 { font-size : 28px; }
-h4 { font-size : 24px; }
-h5 { font-size : 22px; }
-h6 { font-size : 18px; }
-a, p { font-size : 16px; }
 
 *::-webkit-scrollbar-track, *::-ms-autohiding-scrollbar {
   border-radius    :  2px;
@@ -268,4 +261,20 @@ header,section {
   /* overflow-y: auto; */
   /* overflow-x: hidden; */
   /* -webkit-overflow-scrolling: touch; */
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing : 1px;
+}
+
+h1 { font-size : 40px; }
+h2 { font-size : 32px; }
+h3 { font-size : 28px; }
+h4 { font-size : 24px; }
+h5 { font-size : 22px; }
+h6 { font-size : 18px; }
+a, p { font-size : 16px; }
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
 }

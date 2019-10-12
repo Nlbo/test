@@ -26,6 +26,11 @@
   align-items     : center;
   justify-content : space-between;
 }
+.G-flex-center-around {
+  display         : flex;
+  align-items     : center;
+  justify-content : space-around;
+}
 .G-flex-center-end {
   display         : flex;
   align-items     : center;

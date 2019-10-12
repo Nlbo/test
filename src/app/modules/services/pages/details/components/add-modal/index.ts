@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { BaseComponent } from '@helpers/base.component';
 import { ServiceCategoryModel } from '@api/serviceCategory/models/service-category';
@@ -44,32 +44,12 @@ export class AddModalService extends BaseComponent implements OnInit {
       fixedDuration: new FormControl(true),
       roomId: new FormControl(0),
       fromDuration: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$'), Validators.minLength(1)]),
-      toDuration: new FormControl(null),
+      toDuration: new FormControl(null, [Validators.pattern('^[0-9]*$'), Validators.minLength(1)]),
       fromPrice: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$'), Validators.minLength(1)]),
-      toPrice: new FormControl(null),
+      toPrice: new FormControl(null, [Validators.pattern('^[0-9]*$'), Validators.minLength(2)]),
       maxCount: new FormControl('', [Validators.required]),
       time: new FormControl(''),
       branchList: new FormControl([localStorage.getItem('branch')]),
-    });
-
-    this.form.get('fixedPrice').valueChanges.subscribe((data) => {
-      if(!data) {
-        this.form.get('toPrice').setValidators([Validators.required, Validators.pattern('^[0-9]*$'), Validators.minLength(2)]);
-        this.form.get('toPrice').updateValueAndValidity();
-      } else {
-        this.form.get('toPrice').clearValidators();
-        this.form.get('toPrice').updateValueAndValidity();
-      }
-    });
-
-    this.form.get('fixedDuration').valueChanges.subscribe((data) => {
-      if(!data) {
-        this.form.get('toDuration').setValidators([Validators.required, Validators.pattern('^[0-9]*$'), Validators.minLength(1)]);
-        this.form.get('toDuration').updateValueAndValidity();
-      } else {
-        this.form.get('toDuration').clearValidators();
-        this.form.get('toDuration').updateValueAndValidity();
-      }
     });
 
     this.timeList = this.service.timeList;
@@ -81,7 +61,6 @@ export class AddModalService extends BaseComponent implements OnInit {
     });
 
   }
-
 
   validateAll() {
     if (this.roomFlag) {

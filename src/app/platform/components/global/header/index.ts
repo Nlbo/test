@@ -5,6 +5,7 @@ import { SidebarNavigation } from '@platform/models/sidebar-nav';
 import { SelectModel } from '@platform/models/select';
 import { Unsubscribable } from '@platform/decorators/unsubscribable.decorator';
 import { BaseComponent } from '@platform/helpers/base.component';
+import { isNumber } from 'util';
 
 @Component({
   selector: 'app-header',
@@ -12,49 +13,17 @@ import { BaseComponent } from '@platform/helpers/base.component';
   styleUrls: ['./index.scss'],
 })
 export class Header extends BaseComponent implements OnInit {
-  // branch = '';
-
-  // constructor(
-  //   private router: Router,
-  //   private branchService: BranchesService,
-  // ) {
-  // }
-
-  // showMenu(event) {
-  //   const elem: any = document.getElementsByClassName('P-menu');
-  //   const elem2: any = document.getElementsByClassName('menu-dropdown-container');
-  //   for (let i = 0; i < elem.length; i++) {
-  //     elem[i].className = elem[i].className.split(' active-select active-menu').join('');
-  //     elem2[i].className = elem2[i].className.split(' active').join('');
-  //   }
-
-  //   event.target.parentElement.className += ' active-select active-menu';
-  //   if (event.target.parentElement.getElementsByClassName('menu-dropdown-container')[0]) {
-  //     event.target.parentElement.getElementsByClassName('menu-dropdown-container')[0].className.indexOf('active') < 0 ?
-  //       event.target.parentElement.getElementsByClassName('menu-dropdown-container')[0].className += ' active' :
-  //       event.target.parentElement.getElementsByClassName('menu-dropdown-container')[0].className = event.target.parentElement.getElementsByClassName('menu-dropdown-container')[0].className.split(' active').join('');
-
-  //   }
-  // }
-
-  // testRoute() {
-  //   this.router.navigate(['/admin/home/settings']);
-  // }
-
-  // ngOnInit(): void {
-  //   this.branchService.getBranchesList(0, 9999).subscribe((data: any) => {
-  //     this.branchList = data.list;
-  //   });
-  //   const branch = localStorage.getItem('branch');
-  //   if (branch) this.branch = branch;
-  // }
-
   @Input() routes: SidebarNavigation[] = [];
   public notDefined: undefined;
+  
+  // Array
+  public branchList: SelectModel[] = [];
+
+  // Boolean
   public isFirstInit: boolean = true;
 
-  // Array
-  public branchList = [];
+  // Number
+  public branchId: number;
 
   constructor(
     private router: Router,
@@ -70,13 +39,34 @@ export class Header extends BaseComponent implements OnInit {
     });
 
     this.getBranchList();
+
+    if (isNumber(+localStorage.getItem('branch'))) {
+      this.branchId = +localStorage.getItem('branch');
+    }
+  }
+
+  public onNavigateHome() {
+    this.router.navigate(['/']);
+    
+    this.routes.forEach(item => {
+      item.exact = false;
+
+      if (item.path === '/admin/main') {
+        item.exact = true;
+      }
+    });
   }
 
   public changeItemIsOpenedState = (item: SidebarNavigation): void => {
     this.isFirstInit = false;
 
     this.routes.forEach(element => {
-      element.exact = false;
+      element.unSelected = false;
+
+      if (element.exact) {
+        element.exact = false;
+        element.unSelected = true;
+      }
 
       if (element.name !== item.name && element.opened) {
         element.opened = false;
@@ -100,15 +90,16 @@ export class Header extends BaseComponent implements OnInit {
   private getBranchList() {
     return this.branchService.getBranchesList()
       .subscribe(data => {
-        // data.list.forEach(item => {
-        //   this.branchList.push(new SelectModel(item.name, item.id));
-        // });
-        this.branchList = data.list;
+        data.list.forEach(item => {
+          this.branchList.push(new SelectModel(item.name, item.id));          
+        });
       });
   }
 
-  public onSelectBranch(event) {    
-    localStorage.setItem('branch', event.target.value);
+  public onSelectBranch(id: number) {
+    if (id) {
+      localStorage.setItem('branch', id.toString());
+    }
   }
 
   public onCloseMenu(item: SidebarNavigation) {
@@ -117,6 +108,12 @@ export class Header extends BaseComponent implements OnInit {
 
   public onSelectMenuItem(item: SidebarNavigation) {
     this.routes.forEach(element => {
+      element.unSelected = false;
+
+      if (element.exact) {
+        element.unSelected = true;
+      }
+
       element.exact = false;
     });
 

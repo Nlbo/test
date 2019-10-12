@@ -1,0 +1,58 @@
+<modal-wrap >
+  <form [formGroup]="form">
+  <div class="P-groups-add-modal">
+    <h3>Новая категория</h3>
+    <div class="P-groups-modal-input">
+      <p>Название</p>
+      <label>
+        <input  formControlName="name" type="text">
+      </label>
+    </div>
+
+
+    <div class="P-services-radio-block G-flex G-align-center">
+      <div class="P-radio-box">
+        <label>
+          <input type="radio" checked formControlName="groupType" [value]="groupTypeEnum.WithCount">
+          <span></span>
+          <p>Клиенты со скидкой</p>
+        </label>
+      </div>
+      <div class="P-radio-box">
+        <label>
+          <input type="radio"  [value]="groupTypeEnum.Discount"  formControlName="groupType">
+          <span></span>
+          <p>Клиенты без скидкой</p>
+        </label>
+      </div>
+
+      <div class="P-radio-box">
+        <label>
+          <input type="radio"   [value]="groupTypeEnum.Free"  formControlName="groupType">
+          <span></span>
+          <p>Бесплатные клиенты</p>
+        </label>
+      </div>
+
+    </div>
+
+
+    <div class="P-groups-modal-input" *ngIf="form.get('groupType').value === groupTypeEnum.WithCount">
+      <p>Скидка</p>
+      <label>
+        <input  type="text" formControlName="discount">
+      </label>
+      <span class="P-price-icon">%</span>
+    </div>
+
+    <div class="P-service-modal-buttons G-flex G-justify-end">
+
+      <button (click)="close.emit()" class="G-btn">Отменить</button>
+
+      <button class="G-prime-btn" (click)="foo()">Создать</button>
+    </div>
+
+
+  </div>
+  </form>
+</modal-wrap>

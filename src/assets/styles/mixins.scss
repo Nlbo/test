@@ -1,0 +1,7 @@
+@import 'variables';
+
+@mixin notebook {
+  @media (max-width: #{$notebook-size}) {
+    @content;
+  }
+}

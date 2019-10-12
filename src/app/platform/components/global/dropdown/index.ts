@@ -20,6 +20,7 @@ export class Dropdown {
   @Input() error: boolean;
   @Input() disableBorder: boolean;
   @Input() placeholder: string = '';
+  @Input() smallHeight: boolean;
   @Input() get values(): any[] { return this._selectedItems || []; }
   @Input() get value(): any {
     return this._selectedValue;

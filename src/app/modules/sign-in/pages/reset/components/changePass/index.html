@@ -6,13 +6,13 @@
   <div class="P-sign-in-inputs-block">
     <p>Новый пароль</p>
     <label>
-      <input [formControl]="password"  type="password">
+      <input [formControl]="password"  type="text">
     </label>
   </div>
   <div class="P-sign-in-inputs-block">
     <p>Подтвердите новый пароль</p>
     <label>
-      <input [formControl]="checkPassword" [class.G-error]="password.value !== checkPassword.value && checkPassword.touched" type="password">
+      <input [formControl]="checkPassword" [class.G-error]="password.value !== checkPassword.value && checkPassword.touched" type="text">
     </label>
   </div>
   <div class="P-forgote-password G-flex G-justify-end">

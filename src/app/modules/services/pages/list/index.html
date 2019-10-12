@@ -1,16 +1,10 @@
-<div class="G-container">
-
-  <div class="G-main-container">
-    <div class="P-main-top G-flex G-justify-between G-align-center">
-      <div class="G-title">
-        <h3>Услуги</h3>
-      </div>
-      <div class="G-btn">
-        <button (click)="showAddModal()">Создать категорию</button>
-      </div>
+  <div class="P-main-top G-flex G-justify-between G-align-center">
+    <div class="G-title">
+      <h3>Услуги</h3>
     </div>
-  </div>
 
+    <button class="G-prime-btn" (click)="showAddModal()">Создать категорию</button>
+  </div>
 
   <div class="P-services-container">
 
@@ -50,7 +44,6 @@
 
 
   </div>
-</div>
 
 
 <modal-wrap *ngIf="addModalFlag">
@@ -64,13 +57,9 @@
     </div>
     <div class="P-service-modal-buttons G-flex G-justify-end">
 
-      <div class="G-btn ">
-        <button (click)="showAddModal()" class="P-services-modal-input-cancel-btn">Отменить</button>
-      </div>
+      <button (click)="showAddModal()" class="G-btn">Отменить</button>
 
-      <div class="G-btn">
-        <button (click)="addCategoryService()">Сохранить</button>
-      </div>
+      <button class="G-prime-btn" (click)="addCategoryService()">Сохранить</button>
     </div>
   </div>
 </modal-wrap>
@@ -87,13 +76,9 @@
     </div>
     <div class="P-service-modal-buttons G-flex G-justify-end">
 
-      <div class="G-btn ">
-        <button (click)="showEditModal()" class="P-services-modal-input-cancel-btn">Отменить</button>
-      </div>
+      <button (click)="showEditModal()" class="G-btn">Отменить</button>
 
-      <div class="G-btn">
-        <button (click)="editCategoryService()">Сохранить</button>
-      </div>
+      <button class="G-prime-btn" (click)="editCategoryService()">Сохранить</button>
     </div>
   </div>
 </modal-wrap>
@@ -108,13 +93,9 @@
     </div>
     <div class="P-services-modal-buttons G-flex G-justify-end">
 
-      <div class="G-btn ">
-        <button (click)="showDeleteModal()" class="P-services-modal-input-cancel-btn">Отменить</button>
-      </div>
+      <button (click)="showDeleteModal()" class="G-btn">Отменить</button>
 
-      <div class="G-btn">
-        <button (click)="removeBranch()">Удалить</button>
-      </div>
+      <button class="G-prime-btn" (click)="removeBranch()">Удалить</button>
     </div>
   </div>
 </modal-wrap>

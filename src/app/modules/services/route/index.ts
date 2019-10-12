@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { Controller } from '../controller';
 import { ServicesList } from '@modules/services/pages/list';
-import { ServicesListDetails } from '@modules/services/pages/details/controller';
+import { ServicesListDetails } from '@modules/services/pages/details';
 
 const ROUTES: Routes = [
   {

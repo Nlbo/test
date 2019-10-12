@@ -16,7 +16,6 @@ export class RoomService extends BaseService {
   public addBRoom(newName?: string): Observable<any> {
     const data = {
       name: newName,
-      branchList: [localStorage.getItem('branch')],
     };
     return this.httpClient.post(`${this.controller}/`, { model: null}, data);
   }

@@ -6,7 +6,7 @@ import { Router }     from './route';
 
 import { HelpersModule } from '@shared/helpers';
 import { ServicesList } from '@modules/services/pages/list';
-import { ServicesListDetails } from '@modules/services/pages/details/controller';
+import { ServicesListDetails } from '@modules/services/pages/details';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddModalService } from '@modules/services/pages/details/components/add-modal';
 import { EditModalService } from '@modules/services/pages/details/components/edit-modal';

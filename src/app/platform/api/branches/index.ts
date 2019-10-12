@@ -22,7 +22,7 @@ export class BranchesService extends BaseService {
     return this.httpClient.post(`${this.controller}/`, { model: null}, data);
   }
 
-  public getBranchesList(page: number = 1, size: number = 7): Observable<PaginationWrap<BranchesModel>> {
+  public getBranchesList(page: number = 0, size: number = 7): Observable<PaginationWrap<BranchesModel>> {
     return this.httpClient.post(`${this.controller}/${page}/${size}`, { model: BranchesModel, pagination: true});
   }
 
