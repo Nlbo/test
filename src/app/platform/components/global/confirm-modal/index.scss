@@ -1,0 +1,14 @@
+@import "variables";
+
+.P-confirm-modal {
+  padding   : 30px;
+  min-width : 500px;
+
+  .P-confirm-btns {
+    margin-top : 30px;
+
+    button {
+      margin-left : 20px;
+    }
+  }
+}

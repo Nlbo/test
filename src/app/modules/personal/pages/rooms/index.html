@@ -1,0 +1,115 @@
+<div class="G-container">
+
+  <div class="G-main-container">
+    <div class="P-main-top G-flex G-justify-between G-align-center">
+      <div class="G-title">
+        <h3>Комнаты</h3>
+      </div>
+      <div class="G-btn">
+        <button (click)="showAddModal()">Добавить комнату</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="P-rooms-container">
+
+    <div class="P-rooms-table">
+      <div class="G-table-block">
+        <div class="G-table-head">
+          <div class="G-table-tr G-flex G-justify-between">
+            <div class="G-table-th">Название</div>
+            <div class="G-table-th">Клиентов</div>
+          </div>
+        </div>
+        <div class="G-table-body">
+          <div *ngFor="let item of list; let i = index" class="G-table-tr">
+            <div class="G-table-td">{{item.name}}</div>
+            <div class="G-table-td">
+              <div class="P-rooms-date-block G-flex G-justify-between G-align-center">
+                <div class="P-rooms-date">
+                  <p>{{item.serviceCount}}</p>
+                </div>
+                <div class="G-tc-toolbar">
+                  <app-toolbar-btn>
+                    <p  class="G-toolbar-item" (click)="showEditModal(item)">Edit</p>
+                    <p  class="G-toolbar-item" (click)="showDeleteModal(item)">Delete</p>
+                  </app-toolbar-btn>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <g-pagination (itemsChanged)="itemsChanged($event)" [getData]="getList" [setParamsByLoad]="paramsByLoad$"></g-pagination>
+
+
+  </div>
+</div>
+
+
+<modal-wrap *ngIf="addModalFlag">
+  <div class="P-rooms-add-modal">
+    <h3>Новая комната</h3>
+    <div class="P-rooms-modal-input">
+      <p>Название</p>
+      <label>
+        <input [(ngModel)]="newCategoryServiceName" type="text">
+      </label>
+    </div>
+    <div class="P-service-modal-buttons G-flex G-justify-end">
+
+      <div class="G-btn ">
+        <button (click)="showAddModal()" class="P-rooms-modal-input-cancel-btn">Отменить</button>
+      </div>
+
+      <div class="G-btn">
+        <button (click)="addCategoryService()">Создать</button>
+      </div>
+    </div>
+  </div>
+</modal-wrap>
+
+<modal-wrap *ngIf="editModalFlag">
+  <div class="P-rooms-add-modal">
+    <h3>Изменить комнату</h3>
+    <div class="P-rooms-modal-input">
+      <p>Название</p>
+      <label>
+        <input [(ngModel)]="editroomsName" type="text">
+      </label>
+    </div>
+    <div class="P-rooms-modal-buttons G-flex G-justify-end">
+
+      <div class="G-btn ">
+        <button (click)="showEditModal()" class="P-rooms-modal-input-cancel-btn">Отменить</button>
+      </div>
+
+      <div class="G-btn">
+        <button (click)="editBrancheService()">Сохранить</button>
+      </div>
+    </div>
+  </div>
+</modal-wrap>
+
+
+<modal-wrap *ngIf="deleteFlagModal">
+  <div class="P-rooms-delete-modal">
+    <h3>Внимание</h3>
+    <div class="P-rooms-delete-input">
+      <p>Вы уверены, что хотите удалить эту комнату?</p>
+    </div>
+    <div class="P-rooms-modal-buttons G-flex G-justify-end">
+
+      <div class="G-btn ">
+        <button (click)="showDeleteModal()" class="P-rooms-modal-input-cancel-btn">Отменить</button>
+      </div>
+
+      <div class="G-btn">
+        <button (click)="removerooms()">Удалить</button>
+      </div>
+    </div>
+  </div>
+</modal-wrap>

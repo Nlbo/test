@@ -1,0 +1,10 @@
+
+<aside class="P-left-side">
+  <div class="P-content">
+    <div class="P-menu-item G-flex G-align-center" *ngFor="let item of routes" [routerLink]="item.path" routerLinkActive="active">
+      <i [class]="'icon-' + item.icon"></i>
+      <p>{{ item.name }}</p>
+    </div>
+  </div>
+</aside>
+  

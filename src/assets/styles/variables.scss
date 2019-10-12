@@ -1,0 +1,66 @@
+
+// #region Colors
+$black              : #1D1D1D;
+$white              : #ffffff;
+$gray-dark          : #8E8E8E;
+$gray               : #A2A3AD;
+$light              : #F6F6F6;
+$light-gray         : #cccccc;
+$green              : #00CFAC;
+$light-green        : #0bbf6b;
+$red                : #E6374C;
+$blue               : #16719A;
+$el-blue            : #4FDDD9;
+$light-red          : #F60065;
+$yellow             : #e7ad00;
+$light-yellow       : #fbc43a;
+$orange             : #F47421;
+$purple             : #EE00FF;
+$app-color          : #C01974;
+$app-color-shadow   : #C0197469;
+$light-black        : #2b2525;
+$gray-dark          : #8E8E8E;
+$dark-gray          : #7f7f83;
+$pink               : #F0F1F6;
+$dark-pink          : #fd3571;
+$facebook           : #3B5998;
+$linkedin           : #0073B0;
+$twitter            : #1DA1F2;
+$modal-blure        : #00000093;
+$modal-light-blure  : #0000001a;
+$white-blure        : #ffffff3d;
+// #endregion
+
+// #region Alternative styles
+
+$gradient         : linear-gradient(to right, $blue, #5e98d4);
+$shadow           : 0 0 10px rgba(0, 0, 0, .1);
+$btn-shadow       : 0px 4px 20px rgba(0, 0, 0, 0.3);
+$error-shadow     : 0 0 15px transparentize($red, 0.6);
+$blue-shadow      : 0 0 40px rgba($blue, .2);
+$blue-dark-shadow : 0 0 40px rgba($blue, .4);
+$radius           : 3px;
+$btn-radius       : 20px;
+
+$laptop-size : 1024px;
+$tab-size    : 768px;
+$phone-size  : 520px;
+
+// #endregion
+
+// #region App Components styles
+$body-color : $light;
+$main-color : $light-red;
+
+$modal-z      : 1000;
+$right-side-z : $modal-z + 1;
+$header-z     : 500;
+
+$left-side-width        : 300px;
+$left-side-closed-width : 100px;
+$left-side-transition   : .3s;
+$header-height          : 60px;
+$padding-vw             : 8vw;
+$padding                : 8%;
+$input-height           : 40px;
+// #endregion

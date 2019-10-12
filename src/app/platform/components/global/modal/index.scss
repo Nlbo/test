@@ -1,0 +1,55 @@
+@import "variables";
+
+
+.P-modal-wrap {
+
+  width            : 100vw;
+  height           : 100vh;
+  position         : fixed;
+  top              : 0;
+  left             : 0;
+  display          : flex;
+  align-items      : center;
+  justify-content  : center;
+  z-index          : $modal-z;
+
+  .P-modal-bg {
+    width            : 100%;
+    height           : 100%;
+    position         : absolute;
+    top              : 0;
+    left             : 0;
+    background-color : rgba(0,0,0,0.3);
+  }
+
+  .P-modal-container {
+    border-radius    : $radius;
+    position         : relative;
+    z-index          : 1;
+    max-height       : 85vh;
+    overflow         : auto;
+    background-color : $white;
+    max-width: 888px;
+    width: 100%;
+    overflow-x: hidden;
+
+
+    &.P-to-right {
+      width                      : 1000px;
+      height                     : 100vh;
+      position                   : absolute;
+      top                        : 0;
+      right                      : 0;
+      border-top-right-radius    : 0;
+      border-bottom-right-radius : 0;
+
+      @media (max-width: 1000px) {
+        width : 100%;
+      }
+    }
+
+    &.P-small {
+      width : 400px;
+    }
+  }
+}

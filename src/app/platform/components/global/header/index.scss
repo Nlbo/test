@@ -1,0 +1,242 @@
+@import "variables";
+
+header {
+  width            : 100%;
+  height           : $header-height;
+  box-shadow       : $shadow;
+  position         : fixed;
+  z-index          : $header-z;
+  left             : 0;
+  top              : 0;
+  background-color : $white;
+}
+
+.P-logo {
+  width: 67px;
+  min-width: 67px;
+  height: 50px;
+  min-height: 50px;
+}
+
+.P-menu-container {
+  position: relative;
+
+  .P-menu {
+    width: fit-content;
+    min-width: 150px;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    padding: 5px 0;
+
+    box-shadow: $shadow;
+    background-color: $white;
+
+    .P-menu-item {
+      width: 100%;
+      padding: 5px 10px;
+
+      &:hover {
+        background-color: $light;
+      }
+    }
+  }
+}
+
+.P-active {
+  background-color: $light;
+}
+
+.P-nav-item-body {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.P-nav-selected {
+  width: 0;
+  height: 2px;
+  background-color: $dark-pink;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.P-init-selected {
+  width: 100% !important;
+}
+
+.P-selected {
+  animation: openMenu .5s forwards;
+}
+
+.P-unSelected {
+  animation: closeMenu .5s forwards;
+}
+
+@keyframes openMenu {
+  from {
+    width: 30%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes closeMenu {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 0;
+  }
+}
+
+// header {
+//   position: fixed;
+//   top: 0;
+//   width: 100%;
+//   background: #FFFFFF 0% 0% no-repeat padding-box;
+//   box-shadow: 0px 3px 22px #00000029;
+//   z-index: 999;
+// }
+
+// header .header-logo a {
+//   width: 67px;
+//   height: 50px;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: contain;
+// }
+
+// .P-header ul {
+//   display: flex;
+//   justify-content: center;
+// }
+
+// .P-header ul li a {
+//   padding: 33px 45.5px 23px 45.5px;
+// }
+
+// .P-header ul li {
+//   display: inline-block;
+//   position: relative;
+//   cursor: pointer;
+
+//   &:before {
+//     position: absolute;
+//     content: '';
+//     width: 0;
+//     height: 2px;
+//     background-color: $app-color;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     box-shadow: 0px -3px 6px $app-color-shadow;
+//     bottom: 0;
+//     transition: 0.3s;
+//   }
+
+//   &:hover:before, &.active-menu:before, .active-select:before {
+//     width: 100%;
+//   }
+
+//   &.active-select {
+//     .menu-dropdown-container {
+//       opacity: 1;
+//       visibility: visible;
+//     }
+//   }
+// }
+
+.header-select select {
+  width: 168px;
+  height: 37px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 1px solid #CCCCCC;
+  text-align: left;
+  font: Regular 16px/20px PT Sans;
+  letter-spacing: 0;
+  color: #141414;
+}
+
+// .menu-dropdown-container {
+//   position: absolute;
+//   background-color: $white;
+//   box-shadow: 0px 3px 28px #00000029;
+//   opacity: 0;
+//   visibility: hidden;
+//   padding: 15px;
+//   width: 230px;
+//   left: 0;
+//   top: 80px;
+//   z-index: 999;
+//   transition: 0.3s;
+
+//   ul {
+//     li {
+//       a {
+//         padding: 5px 0;
+//       }
+//     }
+//   }
+// }
+
+// .menu-dropdown-container {
+//   display: none;
+// }
+
+// .active {
+//   display: block;
+// }
+
+// @media (max-width: 1400px) {
+//   .P-header .header-menu > ul > li a {
+//     padding: 33px 35.5px 23px 35.5px;
+//   }
+// }
+
+// @media (max-width: 1213px) {
+//   .P-header .header-menu > ul > li a {
+//     padding: 33px 30.5px 23px 30.5px;
+//   }
+// }
+
+// @media (max-width: 1142px) {
+//   .P-header .header-menu > ul > li a {
+//     padding: 25px 25.5px 23px 25.5px;
+//   }
+// }
+
+// @media (max-width: 1069px) {
+//   .P-header .header-menu > ul > li a {
+//     padding: 25px 20.5px 23px 20.5px;
+//   }
+// }
+
+// @media (max-width: 994px) {
+//   .P-header .header-menu > ul > li a {
+//     padding: 25px 15.5px 23px 15.5px;
+//   }
+// }
+
+// @media (max-width: 919px) {
+//   .P-header .header-menu > ul > li {
+//     padding: 33px 10.5px 23px 10.5px;
+//   }
+// }
+
+// @media (max-width: 848px) {
+//   .P-header .header-menu > ul > li {
+//     padding: 33px 5.5px 23px 5.5px;
+//   }
+// }
+
+// @media (max-width: 778px) {
+//   .P-header .header-menu > ul > li {
+//     padding: 33px 3.5px 23px 3.5px;
+//   }
+// }

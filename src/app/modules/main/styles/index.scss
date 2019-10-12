@@ -1,0 +1,51 @@
+@import "variables";
+
+$left-width: 65%;
+
+.P-top {
+  width : $left-width;
+
+  .P-item {
+    width         : calc(100% / 3 - 20px);
+    padding       : 40px 20px;
+    box-shadow    : $shadow;
+    border-radius : 10px;
+
+    &:nth-child(2) {
+      margin : 0 30px;
+    }
+
+    img {
+      width : 50px;
+    }
+  }
+}
+
+.P-left {
+  width : $left-width;
+}
+
+.P-right {
+  width : calc(100% - #{$left-width} - 40px);
+
+  h6 {
+
+    i {
+      display     : block;
+      margin-left : 10px;
+      font-size   : 14px;
+      color       : $green;
+    }
+  }
+
+  a {
+    font-size : 14px;
+  }
+
+  .G-circle-image {
+    width      : 20px;
+    height     : 20px;
+    min-width  : 20px;
+    min-height : 20px;
+  }
+}

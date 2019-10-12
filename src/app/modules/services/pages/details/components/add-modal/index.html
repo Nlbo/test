@@ -1,0 +1,159 @@
+<modal-wrap>
+  <form [formGroup]="form">
+
+    <div class="P-services-add-modal">
+      <h3>Новая услуга</h3>
+      <div class="P-services-modal-input">
+        <p>Название</p>
+        <label>
+          <input type="text" formControlName="name" [class.G-error]="form.get('name').invalid && form.get('name').touched">
+        </label>
+      </div>
+
+      <div class="P-services-radio-block G-flex G-align-center">
+        <div class="P-radio-box">
+          <label>
+            <input type="radio" checked formControlName="fixedPrice" [value]="true" >
+            <span></span>
+            <p>Фиксированная цена</p>
+          </label>
+        </div>
+        <div class="P-radio-box">
+          <label>
+            <input type="radio" formControlName="fixedPrice" [value]="false">
+            <span></span>
+            <p>Диапазон цены</p>
+          </label>
+        </div>
+      </div>
+
+
+      <div >
+
+        <div class="G-flex G-justify-between">
+
+          <div class="P-services-modal-input" [ngClass]="{'P-width-48': !form.get('fixedPrice').value, 'P-width-100': form.get('fixedPrice').value}">
+            <p>{{!form.get('fixedPrice').value ? 'От' : 'Цена'}}</p>
+            <label >
+              <input type="text" formControlName="fromPrice" [class.G-error]="form.get('fromPrice').invalid && form.get('fromPrice').touched">
+            </label>
+          </div>
+
+
+          <div *ngIf="!form.get('fixedPrice').value" class="P-services-modal-input" style="width: 48%">
+            <p>До</p>
+            <label >
+              <input type="text" formControlName="toPrice" [class.G-error]="!form.get('fixedPrice').value && form.get('toPrice').invalid && form.get('toPrice').touched">
+            </label>
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="P-services-radio-block G-flex G-align-center">
+        <div class="P-radio-box">
+          <label>
+            <input type="radio" checked formControlName="fixedDuration" [value]="true">
+            <span></span>
+            <p>Фиксированная цена</p>
+          </label>
+        </div>
+        <div class="P-radio-box">
+          <label>
+            <input type="radio" formControlName="fixedDuration" [value]="false">
+            <span></span>
+            <p>Диапазон цены</p>
+          </label>
+        </div>
+      </div>
+
+
+
+        <div class="G-flex G-justify-between">
+
+          <div class="P-services-modal-input" [ngClass]="{'P-width-48': !form.get('fixedDuration').value, 'P-width-100': form.get('fixedDuration').value}">
+            <p>{{!form.get('fixedDuration').value ? 'От' : 'Продолжительность'}}</p>
+            <label>
+              <input type="text" formControlName="fromDuration" [class.G-error]="form.get('fromDuration').invalid && form.get('fromDuration').touched">
+            </label>
+          </div>
+
+
+          <div *ngIf="!form.get('fixedDuration').value" class="P-services-modal-input" style="width: 48%">
+            <p>До</p>
+            <label>
+              <input type="text" formControlName="toDuration" [class.G-error]="!form.get('fixedDuration').value && form.get('toDuration').invalid && form.get('toDuration').touched">
+            </label>
+          </div>
+
+
+        </div>
+
+
+
+
+      <div class="P-services-modal-input">
+        <p>Макс количество</p>
+        <label  [class.G-error]="form.get('maxCount').invalid && form.get('maxCount').touched">
+          <select-dropdown [value]="null" [list]="durationList" (evChange)="changeItem($event, 'maxCount')" ></select-dropdown>
+        </label>
+      </div>
+
+      <div class="P-checkbox-block">
+        <div class="P-checkbox-box">
+          <label>
+            <input type="checkbox" [(ngModel)]="roomFlag" [ngModelOptions]="{standalone: true}">
+<!--            <span></span>-->
+            <p class="P-app-color-text" style="padding: 0">{{roomFlag ? '-' : '+ '}} Прикрепить к комнате</p>
+          </label>
+        </div>
+      </div>
+
+
+
+      <div class="P-services-modal-input" *ngIf="roomFlag">
+        <p>Напоминание о процедуре</p>
+        <label [class.G-error]="true">
+          <select-dropdown [value]="null" [list]="roomsList" (evChange)="changeItem($event, 'room')"></select-dropdown>
+        </label>
+      </div>
+
+
+
+      <div class="P-checkbox-block">
+        <div class="P-checkbox-box">
+          <label >
+            <input type="checkbox" [(ngModel)]="timeFlag" [ngModelOptions]="{standalone: true}">
+            <span></span>
+            <p>Напоминание о процедуре</p>
+          </label>
+        </div>
+      </div>
+
+
+      <div class="P-services-modal-input" *ngIf="timeFlag">
+        <p></p>
+        <label [class.G-error]="roomFlag && form.get('time').touched">
+          <select-dropdown [value]="null" [list]="timeList" (evChange)="changeItem($event, 'time')"></select-dropdown>
+        </label>
+      </div>
+
+
+      <div class="P-service-modal-buttons G-flex G-justify-end">
+
+        <div class="G-btn ">
+          <button (click)="close.emit()" class="P-services-modal-input-cancel-btn">Отменить</button>
+        </div>
+
+        <div class="G-btn">
+          <button (click)="foo()" type="submit">Сохранить</button>
+        </div>
+      </div>
+    </div>
+
+  </form>
+</modal-wrap>

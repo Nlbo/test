@@ -1,0 +1,12 @@
+<click-outside (clickOutside)="close()">
+  <div class="GG-toolbar-wrap">
+    <div (click)="changeIsOpenState()" class="GG-toolbar-btn G-flex-justify-center" [class.GG-rotate]="rotate">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="GG-toolbar-content" [class.show]="isOpen">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</click-outside>

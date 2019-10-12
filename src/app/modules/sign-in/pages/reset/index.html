@@ -1,0 +1,8 @@
+
+
+
+<div [ngSwitch]="step">
+  <app-send-email *ngSwitchCase="1" (changeStep)="setEmail($event)"></app-send-email>
+  <app-verify-code *ngSwitchCase="2" [email]="email" (setCode)="setCode($event)"></app-verify-code>
+  <app-change-pass *ngSwitchCase="3" [code]="code" [email]="email"></app-change-pass>
+</div>

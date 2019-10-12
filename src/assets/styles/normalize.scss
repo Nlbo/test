@@ -1,0 +1,271 @@
+/* You can add HTML default tag styles */
+
+@font-face {
+  font-family : 'Lato';
+  src         : url('../fonts/Lato-Regular.ttf');
+}
+
+* {
+  margin      : 0;
+  padding     : 0;
+  color       : $black;
+  box-sizing  : border-box;
+  outline     : 0;
+  font-family : 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size        : 16px;
+  color            : $black;
+  //min-width        : 1024px;
+  background-color : $body-color;
+
+  a {
+    color : $black;
+
+    &:hover {
+      color: $black;
+    }
+  }
+}
+
+a {
+  text-decoration : none;
+  color           : aliceblue;
+}
+
+textarea, input, button, pre {
+  font-size   : 16px !important;
+  outline     : none !important;
+}
+
+pre {
+  white-space : pre-wrap;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  margin     : 0;
+  appearance : none;
+}
+
+input[type=file] {
+  display : none;
+}
+
+i[class*=icon] {
+  cursor : pointer;
+}
+
+textarea { resize : none; }
+a, button, label { cursor : pointer; }
+
+button {
+  border           : 0;
+  background-color : transparent;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing : 1px;
+}
+
+h1 { font-size : 40px; }
+h2 { font-size : 32px; }
+h3 { font-size : 28px; }
+h4 { font-size : 24px; }
+h5 { font-size : 22px; }
+h6 { font-size : 18px; }
+a, p { font-size : 16px; }
+
+*::-webkit-scrollbar-track, *::-ms-autohiding-scrollbar {
+  border-radius    :  2px;
+  background-color :  $light;
+}
+
+*::-webkit-scrollbar {
+  width            : 4px;
+  height           : 8px;
+  background-color : $light;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius      : 4px;
+  background-color   : grey;
+}
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+iframe,
+ol,
+ul,
+li,
+form,
+label,
+i,
+footer,
+header,
+menu,
+nav,
+a,
+table,
+thead,
+tbody,
+tfoot,
+tr,
+th,
+td,
+video,
+canvas,
+section,
+applet,
+object,
+blockquote,
+pre,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+ins,
+kbd,
+hgroup,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+dl,
+dt,
+dd,
+fieldset,
+legend,
+article,
+aside,
+details,
+embed,
+figure,
+figcaption,
+output,
+section,
+summary,
+time,
+mark,
+audio,
+center,
+ruby {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+label {
+  display: block;
+}
+ol,
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+* {
+  outline: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+  font: inherit;
+}
+button {
+  cursor: pointer;
+  position: relative;
+}
+input,
+button,
+select,
+textarea {
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  font: inherit;
+}
+.d_none{
+  display: none;
+}
+.d_block{
+  display: block;
+}
+svg{
+  width: 100%;
+  height: 100%;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+strong{
+  font-weight: 600;
+}
+html,body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  font-family: 'Roboto';
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+header,section {
+  /* overflow-y: auto; */
+  /* overflow-x: hidden; */
+  /* -webkit-overflow-scrolling: touch; */
+}

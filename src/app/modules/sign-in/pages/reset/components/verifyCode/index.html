@@ -1,0 +1,21 @@
+<div class="P-sign-in-title P-sign-in-recover-media">
+  <h3>Восстановление пароля</h3>
+  <h6>Мы послали вам код на {{email}}</h6>
+</div>
+<div class="P-sign-in-form">
+  <div class="P-sign-in-inputs-block">
+    <p>Код</p>
+    <label>
+      <input [(ngModel)]="code"  type="text">
+    </label>
+  </div>
+  <div class="P-forgote-password G-flex G-justify-end">
+    <a></a>
+  </div>
+  <div class="P-sign-in-button btn" >
+    <button (click)="auth()" [disabled]="flag" [ngClass]="{'P-sign-in-cursor-progress': flag}">Дальше</button>
+  </div>
+  <div class="P-sign-in-login">
+    <a routerLink="../login">Войти в свой аккаунт</a>
+  </div>
+</div>

@@ -1,0 +1,133 @@
+@import "variables";
+
+
+.P-rooms-container {
+  width: 100%;
+  margin-top: 33.5px;
+  height: 827px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 37px #0000001A;
+  min-height: calc(100vh - 267px);
+  margin-bottom: 60px;
+}
+
+
+
+.P-rooms-container {
+  .G-table-block {
+    .G-table-head{
+      .G-table-tr {
+        padding: 30px 25px 10px 25px;
+      }
+    }
+    .G-table-th, .G-table-td{
+      width:50%;
+      padding: 0 5px;
+      text-align: left;
+      font: Regular 16px/20px PT Sans;
+      letter-spacing: 0;
+    }
+    .G-table-head {
+      .G-table-th, .G-table-td{
+        color: #A1A1A1;
+      }
+    }
+
+    .G-table-body {
+
+      .G-table-tr {
+        padding: 20px 25px 20px 25px;
+        display: flex;
+        align-items: center;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 10px #0000001C;
+
+
+      }
+      .G-table-tr + .G-table-tr{
+        margin-top: 14px;
+      }
+    }
+  }
+  .G-table-modal p {
+    color: #ACACAC;
+  }
+  .G-table-td {
+    color: black;
+  }
+}
+.P-rooms-add-modal {
+   padding: 20px 20px 55px 20px;
+   width: 888px;
+   height: 330px;
+   background: #F9F9F9 0% 0% no-repeat padding-box;
+   box-shadow: 0px 3px 20px #0000001C;
+ }
+.P-rooms-add-modal h3{
+  text-align: left;
+  font: Bold 24px/31px PT Sans;
+  letter-spacing: 0;
+  color: #141414;
+}
+
+.P-rooms-delete-modal {
+  padding: 20px 20px 55px 20px;
+  width: 888px;
+  height: 150px;
+  background: #F9F9F9 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 20px #0000001C;
+}
+.P-rooms-delete-modal h3{
+  text-align: left;
+  font: Bold 24px/31px PT Sans;
+  letter-spacing: 0;
+  color: #141414;
+}
+
+.P-rooms-modal-input p {
+  text-align: left;
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: 0;
+  color: #141414;
+  margin-bottom: 6px;
+}
+.P-rooms-modal-input {
+  padding: 50px 0;
+  width: 100%;
+  label{
+    width: 100%;
+    display: block;
+    input{
+      width: 100%;
+      height: 45px;
+      background: #FFFFFF 0% 0% no-repeat padding-box;
+      border: 0.5px solid #707070;
+      padding: 12px 0 12px 13px;
+    }
+  }
+}
+.P-rooms-modal-input-cancel-btn {
+  background: transparent;
+  text-align: left;
+  font: Regular 20px/26px PT Sans;
+  letter-spacing: 0;
+  color: #747474;
+}
+.P-rooms-more-functions {
+  width: 150px;
+  height: 100px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 28px #00000029;
+  position: absolute;
+  margin-left: -90px;
+}
+.P-rooms-more-functions-item{
+  padding: 19px 0 0 19px;
+}
+.P--more-functions-item p {
+  font: Regular 20px/26px PT Sans;
+  letter-spacing: 0;
+  color: #141414;
+  cursor: pointer;
+}

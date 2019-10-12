@@ -1,0 +1,9 @@
+<modal-wrap [isOpen]="true" (close)="close.emit()">
+  <div class="P-confirm-modal">
+    <p>{{ text }}</p>
+    <div class="P-confirm-btns G-flex G-justify-end">
+      <button (click)="close.emit()">Cancel</button>
+      <button class="G-btn" (click)="confirm.emit()">Confirm</button>
+    </div>
+  </div>
+</modal-wrap>

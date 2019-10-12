@@ -1,0 +1,282 @@
+@import "variables";
+
+
+.P-services-container {
+  width: 100%;
+  margin-top: 33.5px;
+  padding-bottom: 60px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 37px #0000001A;
+  min-height: calc(100vh - 267px);
+  margin-bottom: 60px;
+}
+
+
+.P-services-container {
+  .G-table-block {
+    .G-table-head {
+      .G-table-tr {
+        padding: 30px 25px 10px 25px;
+      }
+    }
+
+    .G-table-th, .G-table-td {
+      width: 33.33%;
+      padding: 0 5px;
+      text-align: left;
+      font: Regular 16px/20px PT Sans;
+      letter-spacing: 0;
+    }
+
+    .G-table-head {
+      .G-table-th, .G-table-td {
+        color: #A1A1A1;
+      }
+    }
+
+    .G-table-body {
+
+      .G-table-tr {
+        padding: 20px 25px 20px 25px;
+        display: flex;
+        align-items: center;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 10px #0000001C;
+
+
+      }
+
+      .G-table-tr + .G-table-tr {
+        margin-top: 14px;
+      }
+    }
+  }
+
+  .G-table-modal p {
+    color: #ACACAC;
+  }
+
+  .G-table-td {
+    color: black;
+  }
+}
+
+.P-services-add-modal {
+  padding: 20px 20px 55px 20px;
+  width: 888px;
+  height: 969px;
+  background: #F9F9F9 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 20px #0000001C;
+}
+
+.P-services-add-modal h3 {
+  text-align: left;
+  font: Bold 24px/31px PT Sans;
+  letter-spacing: 0;
+  color: #141414;
+}
+
+.P-services-delete-modal {
+  padding: 20px 20px 55px 20px;
+  width: 888px;
+  height: 150px;
+  background: #F9F9F9 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 20px #0000001C;
+}
+
+.P-services-delete-modal h3 {
+  text-align: left;
+  font: Bold 24px/31px PT Sans;
+  letter-spacing: 0;
+  color: #141414;
+}
+
+.P-services-modal-input p {
+  text-align: left;
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: 0;
+  color: #141414;
+  margin-bottom: 6px;
+}
+
+.P-services-modal-input {
+  padding: 27px 0;
+  width: 100%;
+
+  label {
+    width: 100%;
+    display: block;
+
+    input {
+      width: 100%;
+      height: 45px;
+      background: #FFFFFF 0% 0% no-repeat padding-box;
+      border: 0.5px solid #707070;
+      padding: 12px 0 12px 13px;
+    }
+  }
+}
+
+.P-services-modal-input-search {
+  padding: 50px 0;
+  width: 422px;
+
+  label {
+    width: 100%;
+    display: block;
+
+    input {
+      width: 100%;
+      height: 45px;
+      background: #FFFFFF 0% 0% no-repeat padding-box;
+      border: 0.5px solid #707070;
+      padding: 12px 0 12px 13px;
+    }
+
+
+    input::placeholder {
+      font: Regular 20px/26px PT Sans;
+      letter-spacing: 0;
+      color: #A1A1A1;
+    }
+  }
+}
+
+
+.P-services-modal-input-cancel-btn {
+  background: transparent;
+  text-align: left;
+  font: Regular 20px/26px PT Sans;
+  letter-spacing: 0;
+  color: #747474;
+}
+
+.P-services-more-functions {
+  width: 150px;
+  height: 100px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 28px #00000029;
+  position: absolute;
+  margin-left: -90px;
+}
+
+.P-services-more-functions-item {
+  padding: 19px 0 0 19px;
+}
+
+.P-services-more-functions-item p {
+  font: Regular 20px/26px PT Sans;
+  letter-spacing: 0;
+  color: #141414;
+  cursor: pointer;
+}
+
+.G-btn-create button {
+  max-width: 224px;
+  width: 100%;
+  margin-left: 17px;
+}
+
+.P-services-radio-block {
+  margin: -15px;
+}
+
+.P-radio-box {
+  padding: 15px;
+
+  label {
+    display: block;
+    width: 100%;
+    position: relative;
+
+    input {
+      display: none;
+
+      &:checked + span:before {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    p {
+      padding-left: 30px;
+      line-height: 1;
+    }
+
+    span {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 1px solid $app-color;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &:before {
+        position: absolute;
+        content: '';
+        width: 10px;
+        height: 10px;
+        background-color: $app-color;
+        border-radius: 50%;
+        transition: 0.3s;
+        opacity: 0;
+        visibility: hidden;
+        left: 3px;
+        top: 3px;
+      }
+    }
+  }
+}
+
+.P-checkbox-box {
+  padding: 15px 15px 15px 0;
+
+  label {
+  display: block;
+    width: 100%;
+    position: relative;
+    input{
+      display: none;
+      &:checked + span{
+        background-color: $app-color;
+        &:before{
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+    p{
+      padding-left: 30px;
+      line-height: 1;
+    }
+    span{
+      width: 19px;
+      height: 19px;
+      border-radius: 3px;
+      border: 1px solid $app-color;
+      position: absolute;
+      left: 0;
+      transform: translateY(-50%);
+      top:50%;
+      transition: 0.3s;
+      &:before{
+        position: absolute;
+        content: "";
+        border: 2px solid white;
+        border-left: none;
+        border-bottom: none;
+        transition: 0.3s;
+        opacity: 0;
+        visibility: hidden;
+        width: 10px;
+        height: 5px;
+        left: 2px;
+        top: 3px;
+        transform: rotate(130deg);
+      }
+    }
+  }
+}

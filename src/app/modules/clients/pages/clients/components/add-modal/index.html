@@ -1,0 +1,89 @@
+<modal-wrap>
+  <form [formGroup]="form">
+
+    <div class="P-clients-add-modal">
+      <h3 class="P-clients-title">Новый клиент</h3>
+      <h3 class="P-clients-subTitle">Информация</h3>
+
+      <div class="G-flex G-justify-between">
+
+
+
+          <div class="P-clients-modal-input" style="width: 48%">
+            <p>Имя<i class="G-red-i" >*</i></p>
+            <label [class.G-error]="form.get('name').invalid && form.get('name').touched">
+              <input type="text"  formControlName="name">
+            </label>
+          </div>
+
+
+          <div class="P-clients-modal-input" style="width: 48%">
+            <p>Номер телефона<i class="G-red-i" >*</i></p>
+            <label [class.G-error]="form.get('phoneNumber').invalid && form.get('phoneNumber').touched">
+              <input type="text" formControlName="phoneNumber" >
+            </label>
+          </div>
+
+        </div>
+
+      <div class="G-flex G-justify-between">
+        <div class="P-clients-modal-input" style="width: 48%">
+          <p>Эл. почта<i class="G-red-i" >*</i></p>
+          <label [class.G-error]="form.get('email').invalid && form.get('email').touched">
+            <input type="text" formControlName="email" >
+          </label>
+        </div>
+        <div class="P-clients-modal-input" style="width: 48%">
+          <p>Дата рождения<i class="G-red-i" >*</i></p>
+          <label [class.G-error]="form.get('dateOfBirth').invalid && form.get('dateOfBirth').touched">
+            <p-calendar  dateFormat="dd.mm.yy" formControlName="dateOfBirth"></p-calendar>
+          </label>
+        </div>
+      </div>
+
+      <div class="G-flex G-justify-between">
+
+        <div class="P-clients-modal-input" style="width: 48%">
+          <p>Группа</p>
+          <label >
+            <select-dropdown [value]="null" [list]="groupsList" (evChange)="changeItem($event)"></select-dropdown>
+          </label>
+        </div>
+
+
+
+        <div class="P-clients-modal-input" style="width: 48%">
+          <p>Скидка</p>
+          <label [class.G-error]="form.get('discount').invalid">
+            <input type="text" formControlName="discount" >
+            <span class="P-price-icon">%</span>
+          </label>
+        </div>
+
+      </div>
+
+
+
+        <div class="P-clients-modal-input" >
+          <p>Личные пристрастия</p>
+          <label>
+            <input type="text" formControlName="personalPreferences">
+          </label>
+        </div>
+
+
+      <div class="P-service-modal-buttons G-flex G-justify-end">
+
+        <div class="G-btn ">
+          <button (click)="close.emit()" class="P-clients-modal-input-cancel-btn">Отменить</button>
+        </div>
+
+        <div class="G-btn">
+          <button (click)="foo()" type="submit">Сохранить</button>
+        </div>
+      </div>
+    </div>
+
+
+  </form>
+</modal-wrap>

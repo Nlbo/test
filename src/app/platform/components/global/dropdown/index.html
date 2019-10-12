@@ -1,0 +1,22 @@
+<click-outside (clickOutside)="close()">
+  <div class="P-select-box" [class.disabled]="disable" [style.border]="disableBorder ? 0 : ''">
+    <div class="P-select" (click)="toggle()" [class.G-error]="error">
+      <div class="P-select-title">
+        <p [class.selected]="value || values.length">{{ title }}</p>
+      </div>
+      <i class="icon-arrow_down_1 P-select-title-icon"></i>
+    </div>
+    <div class="P-select-options" [class.show]="isOpen">
+      <div class="P-select-option"
+        *ngFor="let item of list; let index = index"
+        [class.P-active]="isSelected(item) || isDisabled(item)"
+        (click)="change(item)">
+        <p class="G-flex G-justify-between G-align-center">
+          {{item.name}}
+          <i class="icon-delete" *ngIf="removeBtn" (click)="removeItem($event, item.id, index)"></i>
+        </p>
+      </div>
+    </div>
+  </div>
+</click-outside>
+

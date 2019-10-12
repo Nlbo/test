@@ -1,0 +1,6 @@
+<div class="P-modal-wrap">
+  <div class="P-modal-bg" (click)="close.emit()"></div>
+  <div class="P-modal-container" [class.P-small]="small" [class.P-to-right]="toRight">
+    <ng-content></ng-content>
+  </div>
+</div>

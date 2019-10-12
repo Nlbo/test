@@ -1,0 +1,233 @@
+@font-face {
+  font-family: 'sovats';
+  src:  url('fonts/sovats.eot?qfeinz');
+  src:  url('fonts/sovats.eot?qfeinz#iefix') format('embedded-opentype'),
+    url('fonts/sovats.ttf?qfeinz') format('truetype'),
+    url('fonts/sovats.woff?qfeinz') format('woff'),
+    url('fonts/sovats.svg?qfeinz#sovats') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'sovats' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-add:before {
+  content: "\e900";
+}
+.icon-add_1:before {
+  content: "\e901";
+}
+.icon-arrow_down:before {
+  content: "\e902";
+}
+.icon-arrow_down_1:before {
+  content: "\e903";
+}
+.icon-arrow_left:before {
+  content: "\e904";
+}
+.icon-arrow_left_1:before {
+  content: "\e905";
+}
+.icon-arrow_right:before {
+  content: "\e906";
+}
+.icon-arrow_right_1:before {
+  content: "\e907";
+}
+.icon-arrow_up:before {
+  content: "\e908";
+}
+.icon-arrow_up_1:before {
+  content: "\e909";
+}
+.icon-back:before {
+  content: "\e90a";
+}
+.icon-bonus:before {
+  content: "\e90b";
+}
+.icon-calendar:before {
+  content: "\e90c";
+}
+.icon-campaigns:before {
+  content: "\e90d";
+}
+.icon-cancel:before {
+  content: "\e90e";
+}
+.icon-cart:before {
+  content: "\e90f";
+}
+.icon-chart:before {
+  content: "\e910";
+}
+.icon-check:before {
+  content: "\e911";
+}
+.icon-clock:before {
+  content: "\e912";
+}
+.icon-coins:before {
+  content: "\e913";
+}
+.icon-delete:before {
+  content: "\e914";
+}
+.icon-dislike:before {
+  content: "\e915";
+}
+.icon-driver:before {
+  content: "\e916";
+}
+.icon-edit:before {
+  content: "\e917";
+}
+.icon-email:before {
+  content: "\e918";
+}
+.icon-filter:before {
+  content: "\e919";
+}
+.icon-home:before {
+  content: "\e91a";
+}
+.icon-icon_1:before {
+  content: "\e91b";
+}
+.icon-icon_2:before {
+  content: "\e91c";
+}
+.icon-icon_3:before {
+  content: "\e91d";
+}
+.icon-icon_4:before {
+  content: "\e91e";
+}
+.icon-info:before {
+  content: "\e91f";
+}
+.icon-like:before {
+  content: "\e920";
+}
+.icon-location:before {
+  content: "\e921";
+}
+.icon-location_1:before {
+  content: "\e922";
+}
+.icon-logout:before {
+  content: "\e923";
+}
+.icon-menu:before {
+  content: "\e924";
+}
+.icon-menu_1:before {
+  content: "\e925";
+}
+.icon-message:before {
+  content: "\e926";
+}
+.icon-next:before {
+  content: "\e927";
+}
+.icon-notification:before {
+  content: "\e928";
+}
+.icon-notification_1:before {
+  content: "\e929";
+}
+.icon-ongoing_orders:before {
+  content: "\e92a";
+}
+.icon-operators:before {
+  content: "\e92b";
+}
+.icon-operators_1:before {
+  content: "\e92c";
+}
+.icon-orders:before {
+  content: "\e92d";
+}
+.icon-partners:before {
+  content: "\e92e";
+}
+.icon-phone:before {
+  content: "\e92f";
+}
+.icon-photo:before {
+  content: "\e930";
+}
+.icon-posts:before {
+  content: "\e931";
+}
+.icon-promocodes:before {
+  content: "\e932";
+}
+.icon-refresh:before {
+  content: "\e933";
+}
+.icon-report:before {
+  content: "\e934";
+}
+.icon-restaurant:before {
+  content: "\e935";
+}
+.icon-role-management:before {
+  content: "\e936";
+}
+.icon-search:before {
+  content: "\e937";
+}
+.icon-segments:before {
+  content: "\e938";
+}
+.icon-settings:before {
+  content: "\e939";
+}
+.icon-settings_1:before {
+  content: "\e93a";
+}
+.icon-sort:before {
+  content: "\e93b";
+}
+.icon-staff:before {
+  content: "\e93c";
+}
+.icon-upload:before {
+  content: "\e93d";
+}
+.icon-users:before {
+  content: "\e93e";
+}
+.icon-users_1:before {
+  content: "\e93f";
+}
+.icon-video:before {
+  content: "\e940";
+}
+.icon-clock_2:before {
+  content: "\e941";
+}
+.icon-ad:before {
+  content: "\e942";
+}
+.icon-android-1:before {
+  content: "\e943";
+}
+.icon-apple-3:before {
+  content: "\e944";
+}

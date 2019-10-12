@@ -1,0 +1,122 @@
+@import "variables";
+.P-sign-in-block{
+  display: flex;
+}
+.P-sign-in-box{
+  padding: 0 7vw;
+  width: 100%;
+}
+
+.P-sign-in-container {
+  width: 43%;
+  height: 100vh;
+}
+
+.P-sign-in-bg-image {
+  width: 57%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+
+  &:before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(255,255,255,0.15);
+  }
+}
+.P-sign-in-logo  a{
+  width: 85px;
+  height: 63px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.P-sign-in-title {
+  margin-top: 93px;
+  margin-bottom: 45px;
+}
+.P-sign-in-title h3{
+
+  text-align: left;
+  font: Bold 28px/37px PT Sans;
+  letter-spacing: 0;
+  color: #141414;
+  max-width: 380px;
+  width: 100%;
+  height: 37px;
+}
+.P-sign-in-title h6 {
+  font: Regular 18px/23px PT Sans;
+  letter-spacing: 0;
+  color: #141414;
+  max-width: 415px;
+  width: 100%;
+  height: 46px;
+}
+.P-sign-in-inputs-block p {
+  text-align: left;
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: 0;
+  color: #141414;
+  margin-bottom: 6px;
+}
+
+.P-sign-in-inputs-block{
+  padding: 15px 0;
+  width: 100%;
+  label{
+    width: 100%;
+    display: block;
+    input{
+      width: 100%;
+      height: 45px;
+      background: #FFFFFF 0% 0% no-repeat padding-box;
+      border: 0.5px solid #707070;
+      padding: 12px 0 12px 13px;
+    }
+  }
+}
+.P-forgote-password {
+  margin-bottom: 47px;
+  margin-top: 20px;
+}
+
+
+.P-forgote-password  a{
+  text-align: left;
+  font: Bold 18px/23px PT Sans;
+  letter-spacing: 0;
+  color: $app-color;
+}
+.P-sign-in-button button {
+  width: 193px;
+  height: 45px;
+  background: $app-color 0% 0% no-repeat padding-box;
+  text-align: center;
+  font: Regular 20px/26px PT Sans;
+  letter-spacing: 0;
+  color: #FFFFFF;
+}
+.P-sign-in-cursor-progress {
+  cursor: progress;
+  opacity: 0.5!important;
+}
+.P-sign-in-login a{
+  position: relative;
+  top: 134px;
+  text-align: left;
+  font: Bold 18px/23px PT Sans;
+  letter-spacing: 0;
+  color: #C01974;
+}
+@media  (max-width: 1109px) {
+  .P-sign-in-recover-media h3{
+    margin-bottom: 40px;
+  }
+}
